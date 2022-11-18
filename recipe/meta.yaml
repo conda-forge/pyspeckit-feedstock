@@ -1,20 +1,20 @@
 {% set name = "pyspeckit" %}
-{% set version = "0.1.21" %}
+{% set version = "0.1.24" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 80ffbd125f7b6e58c4019c17ad06d3d40e9d5052a83cbbd55513b2b9526cc581
+  sha256: 39ea24604998f13f2b48e4638534ec48ebb51ab4fbaf52c33886e414de02af47
   patches:
     - setup.py.patch
     - setup.cfg.patch
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
   noarch: python
 
 requirements:
