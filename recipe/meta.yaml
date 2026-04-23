@@ -13,7 +13,7 @@ source:
     - setup.cfg.patch
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv"
   noarch: python
 
@@ -22,7 +22,7 @@ requirements:
     - pip
     - python
   run:
-    - astropy
+    - astropy-base
     - matplotlib >=1.4
     - numpy
     - python
